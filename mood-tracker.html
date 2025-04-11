@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌈 Mood Tracker</h1>
+           
+        <!-- Mood selection options -->
+        <div class="mood-container">
+            <h3>Pick a Mood:</h3>
+            <div class="mood-options">
+                <div class="mood" style="background: #ffadad;" onclick="selectMood('Happy')">😊 Happy</div>
+                <div class="mood" style="background: #ffd6a5;" onclick="selectMood('Calm')">🙂 Calm</div>
+                <div class="mood" style="background: #fdffb6;" onclick="selectMood('Neutral')">😐 Neutral</div>
+                <div class="mood" style="background: #9bf6ff;" onclick="selectMood('Sad')">😢 Sad</div>
+            </div>
+        </div>
+
+        <!-- Calendar for date selection -->
+        <div class="calendar" id="calendar"></div>
+
+        <!-- Mood Summary Button -->
+        <button class="summary-button" onclick="showSummary()">📊 View Mood Summary</button>
+
+        <!-- Clear Selections Button -->
+        <button class="clear-button" onclick="clearSelections()">🗑️ Clear Selections</button>
+
+        <!-- Mood Summary Display -->
+        <div id="summary"></div>
+
+        <!-- Back Button -->
+        <button class="back-button" onclick="history.back()">⬅ Back</button>
+    </div>
+    <footer>
+        &copy; 2025 Suhasri.
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

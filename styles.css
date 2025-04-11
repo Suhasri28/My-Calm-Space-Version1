@@ -1,0 +1,148 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #ffdde1, #ee9ca7);
+    text-align: center;
+    padding: 20px;
+    color: #555;
+}
+
+/* Container Box */
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: rgba(255, 240, 245, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    min-height: 80vh;
+}
+
+/* Headings */
+h1 {
+    color: #ff80ab;
+}
+
+h3 {
+    color: #d63384;
+    margin-top: 20px;
+}
+
+/* Buttons & Options */
+.option-box, .save-button, .summary-button, .back-button, .clear-button, .saveJournal, .showJournal, .clearJournal {
+    background: #ff80ab;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 15px auto;
+    width: 80%;
+    text-decoration: none;
+    border: none;
+    transition: 0.3s ease-in-out;
+}
+
+.option-box:hover, .save-button:hover, .summary-button:hover, .back-button:hover, .clear-button:hover, .saveJournal:hover, .showJournal:hover, .clearJournal:hover {
+    background: #d63384;
+}
+
+/* ====== JOURNAL STYLING ====== */
+.journal-container textarea {
+    width: 90%;
+    height: 250px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #ff80ab;
+    font-size: 16px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Display Journal Entries */
+.journal-entry {
+    background: rgba(255, 240, 245, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ====== MOOD TRACKER STYLING ====== */
+.mood-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Mood Options (Happy, Calm, Neutral, Sad) */
+.mood-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.mood {
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    transition: 0.3s;
+    border: none;
+}
+
+.mood.happy { background: #ffadad; }  /* Happy - Red */
+.mood.calm { background: #ffd6a5; }   /* Calm - Orange */
+.mood.neutral { background: #fdffb6; } /* Neutral - Yellow */
+.mood.sad { background: #9bf6ff; }    /* Sad - Blue */
+
+.mood:hover {
+    opacity: 0.8;
+}
+
+/* ====== CALENDAR STYLING ====== */
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 40px);
+    gap: 5px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.day {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 5px;
+    cursor: pointer;
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.day:hover {
+    background: #ff80ab;
+    color: white;
+}
+
+/* Mood Colors Applied */
+.day.happy { background: #ffadad; color: white; }
+.day.calm { background: #ffd6a5; color: white; }
+.day.neutral { background: #fdffb6; color: white; }
+.day.sad { background: #9bf6ff; color: white; }
+
+/* ====== MOOD SUMMARY SECTION ====== */
+#summary {
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(255, 240, 245, 0.8);
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breathing Timer</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #a18cd1, #fbc2eb);
+            background-image: url('calm.png'); 
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 20px;
+            color: #444;
+        }
+        .container {
+            max-width: 420px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+            min-height: 65vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 5px 5px rgba(255, 255, 255, 0.2);
+
+        }
+        .circle {
+            width: 120px;
+            height: 120px;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 5px 5px rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            margin: 20px auto;
+            transition: transform 4s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .button:hover {
+            background: #d63384;
+            transform: scale(1.05);
+        }
+
+        .bbutton{
+        background: transparent;
+        padding: 10px 15px;
+        border-radius: 8px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        display: block;
+        margin: 15px auto;
+        width: 80%;
+        text-decoration: none;
+        border: none;
+        transition: 0.3s ease-in-out;
+        backdrop-filter: blur(4px);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Breathing Timer</h1>
+        <h3 id="instruction">Ready?</h3>
+        <div class="circle" id="circle"></div>
+        <button class="bbutton" onclick="startBreathing()">Start</button>
+        <button class="bbutton" onclick="stopBreathing()">Stop</button>
+
+        <!-- Back Button -->
+        <button class="bbutton" onclick="history.back()">⬅ Back</button>
+    </div>
+    <footer>
+        &copy; 2025 Suhasri.
+    </footer>
+    
+    <script>
+        let breathingInterval;
+        function startBreathing() {
+            let circle = document.getElementById("circle");
+            let instruction = document.getElementById("instruction");
+            let phases = ["Inhale...", "Hold...", "Exhale..."];
+            let quotes = ["Keep going...", "Almost there...", "calm yourself..."];
+            let durations = [4000, 2000, 4000];
+            let index = 0;
+
+            function animateBreathing() {
+                document.getElementById('instruction').innerText = quotes[Math.floor(Math.random() * quotes.length)];
+                circle.textContent = phases[index];
+
+                if (index === 0) {
+                    circle.style.transform = "scale(1.5)";
+                } else if (index === 2) {
+                    circle.style.transform = "scale(1)";
+                }
+                
+                index = (index + 1) % phases.length;
+                breathingInterval = setTimeout(animateBreathing, durations[index]);
+            }
+
+            animateBreathing();
+        }
+
+        function stopBreathing() {
+            clearTimeout(breathingInterval);
+            document.getElementById("instruction").textContent = "Ready?";
+            let circle = document.getElementById("circle");
+            circle.style.transform = "scale(1)";
+            circle.textContent = "";
+        }
+    </script>
+</body>
+</html>
